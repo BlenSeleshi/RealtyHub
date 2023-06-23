@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Edit your Property | RealtyHub</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .slider {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider .slide-container {
+            display: flex;
+            width: 800%;
+            transition: transform 0.5s ease;
+        }
+
+        .slider .slide-container .slide {
+            width: 12.5%;
+            flex-shrink: 0;
+        }
+
+        .slider .slide-container .slide form {
+            margin-top: 30px;
+        }
+
+        .slider .slide-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .slider .slide-nav button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .slider .slide-nav button:hover {
+            background-color: #0069d9;
+        }
+
+        .carousel-section-links {
+            display: flex;
+            justify-content: center;
+        }
+
+        .carousel-section-links a {
+            margin: 0 10px;
+            color: #006aff;
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 12px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .carousel-section-links a:hover {
+            color: white;
+        }
+
+        .custom-class {
+            width: 60%;
+            height: 100%;
+        }
+
+        .carousel-item img {
+            margin-right: 30px;
+        }
+
+        .carousel-item h2 {
+            margin-top: 40px;
+            margin-left: 3px;
+        }
+
+        .custom-class_two {
+            width: 85%;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .mr-3 {
+            margin-right: 60px;
+        }
+
+        .carousel-indicators {
+            display: none;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid nav-bar bg-transparent">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="img/home.png" alt="Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1 class="m-0 text-primary">RealtyHub</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="index.html#contact_us" class="nav-item nav-link">Contact</a>
+                </div>
+                <div class="text-center me-4">
+                    <a href="#" class="nav-item nav-link"> <img src="img/profile-icon.png" class="profile-icon"
+                            data-toggle="modal" data-target="#profileModal"></a>
+                </div>
+                <a href="manage_property.html" class="btn btn-outline-primary px-3 d-none d-lg-flex">Manage Property</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="profileModalLabel">User Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <h3>Your profile</h3>
+                        <div class="form-group">
+                            <label for="name">First name</label>
+                            <input type="text" class="form-control" id="name" value="John Doe" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last name</label>
+                            <input type="text" class="form-control " id="lname" value="John Doe" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" value="johndoe@example.com" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" value="********" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" value="1234567890" disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary"  href="" id="Logout">LogOut</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5 custom-class_two">
+        <div class="carousel-section-links mt-5">
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="0"
+                data-bs-target="#myCarousel">Get
+                Started</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="1"
+                data-bs-target="#myCarousel">Property Info</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="2"
+                data-bs-target="#myCarousel">Price & Location</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="3"
+                data-bs-target="#myCarousel">Description</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="4"
+                data-bs-target="#myCarousel">Listing details</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="5"
+                data-bs-target="#myCarousel">Media</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="6"
+                data-bs-target="#myCarousel">Amenities</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="7"
+                data-bs-target="#myCarousel">Additional Info</a>
+            <a href="#myCarousel" class="h6 btn btn-outline-primary" data-bs-slide-to="8"
+                data-bs-target="#myCarousel">Open
+                house & Publish</a>
+        </div>
+
+        <div class="row border border-light border-2 rounded p-4 mt-3">
+            <div class="col-md-12">
+
+                <div id="myCarousel" class="carousel slide" data-bs-interval="false">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="3"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="4"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="5"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="6"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="7"></li>
+                        <li data-bs-target="#myCarousel" data-bs-slide-to="8"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <!-- Section 0 -->
+                        <div class="carousel-item active">
+                            <img src="img/Sell_My_HomeV1102.png" width="25%" height="25%" class="float-start">
+                            <h2 class="mt-5">Edit your property listing</h2>
+                            <p>Update your property information!</p>
+                        </div>
+
+                        <!-- Section 1 -->
+                        <div class="carousel-item" id="Item1">
+                            <h5>Property Info</h5>
+                            <form>
+                                <div class="mb-3 custom-class">
+                                    <label for="title" class="form-label h6">Title<span class="red">*</span></label>
+                                    <input type="text" class="form-control border border-dark" id="title" name="title" required>
+                                    </div>
+                                    <div class="mb-3 custom-class">
+                                    <label for="sqft" class="form-label h6">Square footage</label>
+                                    <input type="text" class="form-control border border-dark" id="sqft" name="sqft"
+                               required>
+                                    </div>
+                                    <div class="mb-3 custom-class">
+                                    <label for="bedrooms" class="form-label h6 ">Total bedrooms<span
+                                    class="red">*</span></label>
+                                    <select class="form-select border border-dark" id="bedrooms" name="bedrooms" required>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7+">7+</option>
+                                    </select>
+                                    </div>
+                                    <div class="mb-3 custom-class">
+                                    <label for="bathrooms" class="form-label h6">Total bathrooms<span class="red">*</span></label>
+                                    <select class="form-select border border-dark" id="bathrooms" name="bathrooms" required>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7+">7+</option>
+                                                                        </select>
+                                    </div>
+                                    <div class="mb-3 custom-class">
+                                    <label for="kitchen" class="form-label h6">Number Kitchen<span class="red">*</span></label>
+                                    <select class="form-select border border-dark" id="kitchens" name="kitchens" required>
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4+</option>
+                                                                        </select>
+                                    </div>
+                            </form>
+                        </div>
+
+                        <!-- Section 2 -->
+                        <div class="carousel-item" id="Item2">
+                            <h5>Price & Location</h5>
+                            <form>
+                                <div class="mb-3 custom-class">
+                                    <label for="street" class="form-label h6">Price<span class="red">*</span></label>
+                                    <input type="text" class="form-control border border-dark" id="price"
+                                        name="price" required>
+                                </div>
+                                <div class="mb-3 custom-class">
+                                    <label for="street" class="form-label h6">City<span class="red">*</span></label>
+                                    <input type="text" class="form-control border border-dark" id="city"
+                                         name="city" required>
+                                </div>
+                                <div class="mb-3 custom-class">
+                                    <label for="street" class="form-label h6">Street Address<span
+                                            class="red">*</span></label>
+                                    <input type="text" class="form-control border border-dark" id="address"
+                                         name="address" required>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Section 3 -->
+                        <div class="carousel-item" id="Item3">
+                            <h5>Description the property</h5>
+                            <p class="text-black-50">Write several sentences describing the
+                                desirable features that will
+                                attract users to your property.</p>
+                            <div class="mb-3 custom-class">
+                                <label for="description" class="form-label h6">Property description:</label>
+                                <textarea class="form-control border border-dark" id="description" name="description"
+                                    rows="8"
+                                    ></textarea>
+                            </div>
+                        </div>
+                        <!-- Section 4 -->
+                        <div class="carousel-item" id="Item4">
+                            <h5>Listing details</h5>
+                          <form>
+                            <div class="mb-3 custom-class">
+                                <label for="p_type" class="form-label h6">Property type<span
+                                        class="red">*</span></label>
+                                <select class="form-select border border-dark" id="p_type" name="p_type" required>
+                              
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Villa">Villa</option>
+                                    <option value="Residential house">Residential house</option>
+                                    <option value="Condominium">Condominium</option>
+                                    <option value="Building">Building</option>
+                                    <option value="real-estate house">real-estate house</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 custom-class">
+                                <label for="bathrooms" class="form-label h6">Listing type<span
+                                        class="red">*</span></label>
+                                <select class="form-select border border-dark" id="listingType" name="bathrooms"
+                                    required>
+                                   
+                                    <option value="for_sale">For Sale</option>
+                                    <option value="for_rent">For Rent</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 custom-class">
+                                <label for="tot_flor" class="form-label h6">Total floor</label>
+                                <select class="form-select border border-dark" id="totalFloor" name="tot_flor"
+                                    required>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10+</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 custom-class">
+                                <label for="tot_flor" class="form-label h6">Floor</label>
+                                <select class="form-select border border-dark" id="floor" name="tot_flor"
+                                    required>
+                                   
+                                    <option value="0">0</option>
+                                    <option value="1">1st floor</option>
+                                    <option value="2">2nd floor</option>
+                                    <option value="3">3rd floor</option>
+                                    <option value="4">4th floor</option>
+                                    <option value="5">5th floor</option>
+                                    <option value="6">6th floor</option>
+                                    <option value="7">7th floor</option>
+                                    <option value="8">8th floor</option>
+                                    <option value="9">9th floor</option>
+                                    <option value="10">10+ floor</option>
+                                </select>
+                            </div>
+                          </form>
+                        </div>
+                        <!-- Section 5 -->
+                        <div class="carousel-item custom-class">
+                            <h5>Add photos</h5>
+                            <p class="text-black-50">Photos help users imagine living in your place.</p>
+                            <div class="mb-3">
+                                <label for="formFileMultiple" class="form-label h6">Uploads images<span
+                                        class="red">*</span></label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                            </div>
+                        </div>
+                        <!-- Section 6 -->
+                        <div class="carousel-item custom-class">
+                            <h5>Which amenities does your property have?</h5>
+                            <p class="text-black-50">Share which amenities are available at your property.</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Air conditioning"
+                                    id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Air conditioning
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=" Balcony" id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Balcony or deck
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Furnished" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Furnished
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Hardwood floors"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Hardwood floors
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=" Disabled access"
+                                    id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Disabled access
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Garage parking"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Garage parking
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Off-street parking"
+                                    id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Off-street parking
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Dishwasher"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Dishwasher
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=" Pool" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Pool
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value=" Bicycle storage"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Bicycle storage
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="Laundry facility"
+                                    id="flexCheckChecked">
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Laundry facility
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <!-- Section 8 -->
+                        <div class="carousel-item">
+                            <h5>Who's listing this property for rent?</h5>
+                            <p>Enter your information, unless you're creating the listing for someone else and they
+                                should be the main contact person.</p>
+                            <form>
+                                
+                                <div class="mb-3 custom-class">
+                                    <label for="street" class="form-label h6">Property posted by<span
+                                            class="red">*</span></label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Property owner
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Management company or broker
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                        <!--Section 9-->
+                        <div class="carousel-item" id="Item5">
+                            <h5>When are you available to show the property?</h5>
+                            <p>Open house available</p>
+                            <form>
+                                <div class="mb-3 custom-class">
+                                    <label for="date1" class="form-label h6">Date <span class="red">*</span></label>
+                                    <input type="date" class="form-control border border-dark datepicker" id="date1"
+                                        placeholder="${property.openHouse}" name="date1" required>
+                                </div>
+                                <div class="mb-3 custom-class">
+                                    <label for="date2" class="form-label">Another open house date</label>
+                                    <input type="date" class="form-control border border-dark datepicker" id="date2"
+                                        placeholder="${property.openHouse2}" name="date2" required>
+                                </div>
+                                <button class="btn btn-primary px-4" type="button" data-bs-target="#myCarousel"
+                                data-bs-slide="next" id="subButton">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-evenly mt-5">
+                        <div class="carousel-controls">
+                            <button class="btn btn-outline-primary px-4 mr-3" type="button" data-bs-target="#myCarousel"
+                                data-bs-slide="prev" id="backButton">
+                                Back
+                            </button>
+                            <button class="btn btn-primary px-4" type="button" data-bs-target="#myCarousel"
+                                data-bs-slide="next" id="nextButton">Next</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="js/UserProperties.js"></script>
+    <script src="js/editProperties.js"></script>
+    <script src="js/LogOut.js"></script>
+
+    <script src="script.js"></script>
+
+    <!-- <script>
+        var sectionRange = document.getElementById('section-range');
+        var carousel = document.getElementById('myCarousel');
+        carousel.addEventListener('slid.bs.carousel', function () {
+            var activeIndex = $('.carousel-item.active').index();
+            sectionRange.value = activeIndex + 1;
+        });
+
+        $(function () {
+            $(".datepicker").datepicker();
+        });
+
+    </script> -->
+
+    <!-- Bootstrap JS (jQuery and Popper.js are required dependencies) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function () {
+            // Notification button click event
+            $('#notificationButton').click(function () {
+                // Show notifications
+                alert('You have 5 new notifications!');
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var carousel = document.getElementById('myCarousel');
+            var nextButton = document.getElementById('nextButton');
+            var backButton = document.getElementById('backButton');
+
+            carousel.addEventListener('slid.bs.carousel', function (event) {
+                var activeSlide = event.relatedTarget;
+                var slideIndex = Array.from(carousel.querySelectorAll('.carousel-item')).indexOf(activeSlide);
+
+                if (slideIndex === 0) {
+                    nextButton.textContent = 'Next';
+                    backButton.disabled = true;
+                } else if (slideIndex === carousel.querySelectorAll('.carousel-item').length - 1) {
+                    nextButton.textContent = 'Submit';
+                } else {
+                    nextButton.textContent = 'Next';
+                    backButton.style.visibility = 'visible';
+                    backButton.textContent = 'Back';
+                    backButton.disabled = false;
+                }
+            });
+        });
+    </script>
+   
+</body>
+
+
+</html>

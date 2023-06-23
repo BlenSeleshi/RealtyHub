@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Browse</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
+        integrity="sha512-GC/JyB7vKikPwW4Pq3E4mZ9zvG8eJWV6Uc/6U+M6vJf6+BwNkZfQdZo9Xv9z1Kj6yE1Fy+I6cJl6jYU6ZzjsEA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"
+        integrity="sha512-+r3tD3Jl1m+PuG8mLHfjF1JdZ9+g9PQnJ5NcB2QoJNkFv1YwN1h5JxGZbX9o/5z5+0tPSrJbDq193pL1Yk0nRQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-bar bg-transparent">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+                <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                    <div class="icon p-2 me-2">
+                        <img class="img-fluid" src="img/home.png" alt="Icon" style="width: 30px; height: 30px;">
+                    </div>
+                    <h1 class="m-0 text-primary">RealtyHub</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="browse.html" class="nav-item nav-link">Buy</a>
+                        <a href="sell_rent_dashboard.html" class="nav-item nav-link">Sell</a>
+                        <a href="" class="nav-item nav-link active">Rent</a>
+                    </div>
+                    <a href="post_property.html" class="btn btn-primary px-3 d-none d-lg-flex me-3">Add Property</a>
+                    <a href="manage_property.html" class="btn btn-outline-primary px-3 d-none d-lg-flex">Manage
+                        Property</a>
+                </div>
+            </nav>
+        </div>
+        <!-- Navbar End -->
+
+
+
+        <!-- Search Start -->
+        <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style="padding: 35px;">
+            <div class="container">
+                <div class="row g-2">
+                    <div class="col-md-10">
+                        <div class="row g-2">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control border-0 py-3" id="Location" placeholder="City, Address">
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select border-0 py-3" id="PropertyType">
+                                    <option selected>Home Type</option>
+                                    <option value="1">Apartment</option>
+                                    <option value="2">Villa</option>
+                                    <option value="3">Office </option>
+                                </select>
+                            </div>
+                           
+                            <div class="col-md-4">
+                                <input type="text" class="form-control border-0 py-3" id="SearchKeyword" placeholder="Search Keyword">
+                            </div>
+                          <div class="col-md-2">
+                                <input type="text" class="form-control border-0 py-3" id="Price" placeholder="Price">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary border-0 w-100 py-3" id="SearchButton">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-0 gx-5 align-items-end">
+                    <div class="col-lg-6">
+                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                            <h3 class="mb-3">Real Estate & Homes For Sale</h3>
+                            <p>Results: </p>
+                        </div>
+                    </div>
+                    <!-- <div class="dropdown d-flex justify-content-end mb-5">
+                       
+                        <a class="btn btn-outline-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sort: Homes for you
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                    
+                            <li><a class="dropdown-item" href="#">Newest property</a></li>
+                            <li><a class="dropdown-item" href="#">Oldest property</a></li>
+                            <li><a class="dropdown-item" href="#">Price (High to Low)</a></li>
+                            <li><a class="dropdown-item" href="#">Price (Low to High)</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>   
+
+               <!-- Property List Start -->  
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4" id="searchedPropertyContainer">
+                            
+                       </div>
+                  </div>
+             </div>
+         <!-- Property List End -->
+
+
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>RealtyHub, Inc. Ethiopia, Addis Ababa,
+                            4kilo </p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+2519-03-16-97</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>blen@RealtyHub.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Photo Gallery</h5>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-1.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-4.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Sign Up</h5>
+                        <p>Become RealtyHub user</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                                placeholder="Your email">
+                            <a type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+                                href="create_page.html">SignUp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">RealtyHub</a>, All Right Reserved.
+                            Designed By <a class="border-bottom" href="">RealtyHub</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="#contact_us">Contact Us</a>
+                                <a href="#feedback">Feedback</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/SearchRent.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+<!-- <script>
+    const priceDropdown = document.querySelector('.price-dropdown');
+    const priceHeader = document.querySelector('.price-header');
+    const bedsBathsDropdown = document.querySelector('.beds-baths-dropdown');
+
+    priceHeader.addEventListener('click', () => {
+        priceDropdown.classList.toggle('show');
+    });
+
+    bedsBathsDropdown.innerHTML = `
+        <input type="number" class="form-control border-0 py-3" placeholder="Beds" min="0" max="10">
+        <input type="number" class="form-control border-0 py-3" placeholder="Baths" min="0" max="10">
+    `;
+</script> -->
+
+</html>
